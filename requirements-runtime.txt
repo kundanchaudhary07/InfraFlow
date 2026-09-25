@@ -1,0 +1,14 @@
+# Runtime dependencies — installed in the Docker image and in production.
+# fastapi
+fastapi==0.115.12
+uvicorn[standard]==0.34.3
+
+# Data validation / settings
+pydantic==2.11.3
+pydantic-settings==2.9.1
+
+# Machine Learning Risk Engine (Phase 5)
+xgboost==3.4.1
+scikit-learn==1.9.1
+joblib==1.6.0
+numpy==2.5.3

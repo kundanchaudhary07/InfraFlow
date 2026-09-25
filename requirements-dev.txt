@@ -1,0 +1,9 @@
+# Development / testing dependencies — local use only; NOT installed in Docker image.
+-r requirements-runtime.txt
+
+# HTTP client (backing FastAPI's TestClient)
+httpx==0.28.1
+
+# Test runner
+pytest==8.3.5
+pytest-asyncio==0.26.0

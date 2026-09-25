@@ -1,0 +1,3 @@
+# Convenience file for local development: installs everything.
+# The Docker image uses requirements-runtime.txt exclusively.
+-r requirements-dev.txt

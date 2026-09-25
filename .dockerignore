@@ -1,0 +1,80 @@
+# =============================================================================
+# .dockerignore — DeployGuard Demo Order Service
+#
+# Files and directories listed here are excluded from the Docker build context.
+# A tight build context speeds up `docker build` (less data sent to the daemon)
+# and prevents sensitive or unnecessary files from ever entering the image.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Virtual environment
+# -----------------------------------------------------------------------------
+# The container installs its own dependencies via pip; the local venv must
+# never be copied in. It is also large (~100 MB) and platform-specific.
+.venv/
+venv/
+env/
+
+# -----------------------------------------------------------------------------
+# Python bytecode / cache
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# -----------------------------------------------------------------------------
+# pytest artefacts
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# -----------------------------------------------------------------------------
+# Environment / secrets
+# -----------------------------------------------------------------------------
+# The real .env file (if present locally) must never be baked into the image.
+# Configuration is supplied at runtime via `docker run -e` or an orchestrator.
+.env
+
+# -----------------------------------------------------------------------------
+# Version control
+# -----------------------------------------------------------------------------
+.git/
+.gitignore
+
+# -----------------------------------------------------------------------------
+# IDE / editor artefacts
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# Distribution / packaging artefacts
+# -----------------------------------------------------------------------------
+dist/
+build/
+*.egg-info/
+
+# -----------------------------------------------------------------------------
+# Tests
+# -----------------------------------------------------------------------------
+# Tests are not needed inside the production image.
+# They run on the host (or in CI) against the running container.
+tests/
+
+# -----------------------------------------------------------------------------
+# Docs and project metadata not needed at runtime
+# -----------------------------------------------------------------------------
+README.md
+.env.example
+pyproject.toml
+
+# The Dockerfile only installs from requirements-runtime.txt.
+# These files are for local dev only.
+requirements.txt
+requirements-dev.txt

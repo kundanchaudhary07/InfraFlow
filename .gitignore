@@ -1,0 +1,36 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ─── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ─── Environment / secrets ────────────────────────────────────────────────────
+.env
+
+# ─── pytest / coverage ────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ─── Distribution / packaging ─────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+
+# ─── IDEs ─────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+
+# ─── Data & Machine Learning Artifacts ────────────────────────────────────────
+data/*.csv
+models/*.joblib
+models/*.json
